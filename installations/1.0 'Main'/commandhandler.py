@@ -29,7 +29,7 @@ def check(cmd, usr):
             exec(f'print(\'{item.replace(".py", "")} - \' + {item.replace(".py", "")}.description())')
         print()
     elif cmd.lower().split(' ')[0]+'.py' in bin_list:
-        exec(f"{cmd.lower().split(' ')[0].removesuffix('.py')}.run(cmd)")
+        exec(f"{cmd.lower().split(' ')[0].removesuffix('.py')}.run(cmd)", {})
     else:
         if math == 0:print("Command not found run help for list of commands")
         math = 1
